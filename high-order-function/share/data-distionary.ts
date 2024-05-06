@@ -8808,3 +8808,7 @@ export const CountCommentsAndPosts = [
     postsCount: 10,
   },
 ];
+
+export const postUrl = 'https://jsonplaceholder.typicode.com/posts/1';
+export const commentsUrl =
+  'https://jsonplaceholder.typicode.com/posts/1/comments';
