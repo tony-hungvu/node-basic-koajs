@@ -4,6 +4,8 @@ import {
   MappedData,
   Posts,
   Users,
+  commentsUrl,
+  postUrl,
 } from './share/data-distionary';
 
 // Excercise 1: Get all the posts and comments from the API. Map the data with the users array
@@ -72,9 +74,6 @@ console.log(
 );
 
 // Excercise 6: Get the post with ID of 1 via API request, at the same time get comments for post ID of 1 via another API request
-const postUrl = 'https://jsonplaceholder.typicode.com/posts/1';
-const commentsUrl = 'https://jsonplaceholder.typicode.com/posts/1/comments';
-
 Promise.all([
   fetch(postUrl).then((response) => response.json()),
   fetch(commentsUrl).then((response) => response.json()),
