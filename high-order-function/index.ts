@@ -1,19 +1,19 @@
 import {
-  Comments,
-  CountCommentsAndPosts,
-  MappedData,
-  Posts,
-  Users,
+  comments,
   commentsUrl,
+  countCommentsAndPosts,
+  mappedDatas,
   postUrl,
+  posts,
+  users,
 } from './share/data-distionary';
 
 // Excercise 1: Get all the posts and comments from the API. Map the data with the users array
-new Map(Users.map((user) => [user.id, user]));
+new Map(users.map((user) => [user.id, user]));
 
-const mappedData = Users.map((user) => {
-  const userPosts = Posts.filter((post) => post.userId === user.id);
-  const userComments = Comments.filter(
+const mappedUser = users.map((user) => {
+  const userPosts = posts.filter((post) => post.userId === user.id);
+  const userComments = comments.filter(
     (comment) =>
       comment.postId in
       userPosts.reduce((acc, post) => ({ ...acc, [post.id]: true }), {})
@@ -21,17 +21,17 @@ const mappedData = Users.map((user) => {
   return { ...user, comments: userComments, posts: userPosts };
 });
 
-console.log(mappedData);
+console.log(mappedUser);
 
 // Excercise 2: Filter only users with more than 3 comments.
-const usersWithMoreThanThreeComments = MappedData.filter(
+const usersWithMoreThanThreeComments = mappedDatas.filter(
   (user) => user.comments.length > 3
 );
 
 console.log(usersWithMoreThanThreeComments);
 
 // Excercise 3: Reformat the data with the count of comments and posts
-const reformattedData = MappedData.map((user) => {
+const reformattedData = mappedDatas.map((user) => {
   const commentsCount = user.comments.length;
   const postsCount = user.posts.length;
 
@@ -52,7 +52,7 @@ console.log(reformattedData);
 let maxComments = 0;
 let userWithMostComments;
 
-MappedData.forEach((user) => {
+mappedDatas.forEach((user) => {
   const numComments = user.comments.length;
   if (numComments > maxComments) {
     maxComments = numComments;
@@ -65,11 +65,11 @@ console.log(
 );
 
 // Excercise 5: Sort the list of users by the postsCount value descending?
-CountCommentsAndPosts.sort((a, b) => b.postsCount - a.postsCount);
+countCommentsAndPosts.sort((a, b) => b.postsCount - a.postsCount);
 
 console.log(
   `Sorted list of users by postCount descending: ${JSON.stringify(
-    CountCommentsAndPosts
+    countCommentsAndPosts
   )}`
 );
 
