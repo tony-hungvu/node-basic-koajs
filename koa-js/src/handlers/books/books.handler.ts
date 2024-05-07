@@ -37,7 +37,7 @@ const getBookById = async (ctx: Context) => {
   }
 };
 
-const createdBook = async (ctx: Context) => {
+const createdBook = async (ctx: any) => {
   try {
     const postData = ctx.request.body;
     const res = await bookRepository.create(postData);
@@ -73,7 +73,7 @@ const deletedBook = async (ctx: Context) => {
   }
 };
 
-const updatedBook = async (ctx: Context) => {
+const updatedBook = async (ctx: any) => {
   const { id } = ctx.params;
   const postData = ctx.request.body;
   try {
