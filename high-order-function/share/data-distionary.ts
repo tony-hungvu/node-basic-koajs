@@ -1,4 +1,4 @@
-export const Users = [
+export const users = [
   {
     id: 1,
     name: 'Leanne Graham',
@@ -231,7 +231,7 @@ export const Users = [
   },
 ];
 
-export const Posts = [
+export const posts = [
   {
     userId: 1,
     id: 1,
@@ -842,7 +842,7 @@ export const Posts = [
   },
 ];
 
-export const Comments = [
+export const comments = [
   {
     postId: 1,
     id: 1,
@@ -4345,7 +4345,7 @@ export const Comments = [
   },
 ];
 
-export const MappedData = [
+export const mappedDatas = [
   {
     id: 1,
     name: 'Leanne Graham',
@@ -8726,7 +8726,7 @@ export const MappedData = [
   },
 ];
 
-export const CountCommentsAndPosts = [
+export const countCommentsAndPosts = [
   {
     id: 1,
     name: 'Leanne Graham',
